@@ -5,28 +5,42 @@ namespace PickAndMatch.Gameplay.Board
     public class BoardGenerator
     {
         private readonly float cellSize;
+        private readonly float spacing;
 
-        public BoardGenerator(float cellSize = 1.5f)
+        public BoardGenerator(
+            float cellSize,
+            float spacing)
         {
             this.cellSize = cellSize;
+            this.spacing = spacing;
         }
 
         public Vector3 GetPosition(
             int x,
             int y,
-            int width,
-            int height)
+            int columns,
+            int rows)
         {
-            float offsetX =
-                (width - 1) * cellSize * 0.5f;
+            float step =
+                cellSize + spacing;
 
-            float offsetY =
-                (height - 1) * cellSize * 0.5f;
+            float width =
+                (columns - 1) * step;
+
+            float height =
+                (rows - 1) * step;
+
+            float startX =
+                -width / 2f;
+
+            float startY =
+                -height / 2f;
 
             return new Vector3(
-                x * cellSize - offsetX,
-                y * cellSize - offsetY,
-                0f);
+                startX + x * step,
+                startY + y * step,
+                0f
+            );
         }
     }
 }

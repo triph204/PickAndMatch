@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   levelNumber: 6
-  rows: 5
-  columns: 6
+  rows: 6
+  columns: 5
   animals:
   - {fileID: 11400000, guid: 2181b29ca17976f4eb4b1cff847afcfd, type: 2}
   - {fileID: 11400000, guid: bb56857e0e92a2440bf34d3a37abce7c, type: 2}

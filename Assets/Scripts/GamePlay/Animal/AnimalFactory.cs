@@ -11,8 +11,6 @@ namespace PickAndMatch.Gameplay.Animal
             this.parent = parent;
         }
 
-        // prefab: 1 prefab Animal DUY NHẤT dùng chung cho mọi loại con vật.
-        // AnimalData chỉ còn cung cấp Type + Sprite, không dùng field Prefab của nó nữa.
         public Animal Create(
             Animal prefab,
             AnimalData data,
@@ -29,7 +27,9 @@ namespace PickAndMatch.Gameplay.Animal
             if (prefab == null)
             {
                 Debug.LogError(
-                    "Animal prefab chưa được gán (BoardManager > Animal Prefab).");
+                    "Animal prefab chưa được gán (BoardManager > Animal Prefab)."
+                );
+
                 return null;
             }
 
@@ -37,12 +37,14 @@ namespace PickAndMatch.Gameplay.Animal
                 prefab,
                 position,
                 Quaternion.identity,
-                parent);
+                parent
+            );
 
             animal.Initialize(
                 data,
                 backFrameSprite,
-                frontFrameSprite);
+                frontFrameSprite
+            );
 
             return animal;
         }
